@@ -1,7 +1,7 @@
 # rexx-agent-manifesto
-​[Manifesto] Rethinking AI Agents: 30-Year REXX Agent White Paper &amp; Architecture Insights (1993-2026). 從 1993 年 IBM《REXX Agents》白皮書看現代 AI 的軟體脂肪。告別笨重的 LangChain，重塑極簡、微秒級、低功耗的下一代 Agent Runtime！ 🔗 Welcome to Fork, Discuss &amp; Build the Prototype!
+​[Manifesto] Rethinking AI Agents: REXX Agent &amp; Architecture Insights (1993-2026). 從 1993 年 IBM《REXX Agents》看現代 AI 的軟體脂肪。告別笨重的 LangChain，重塑極簡、微秒級、低功耗的下一代 Agent Runtime！ 🔗 Welcome to Fork, Discuss &amp; Build the Prototype!
 ================================================================================
-【致新一代AI架構師：告別軟體脂肪，從30年前IBM《REXX Agents》白皮書看AI Agent的極簡重構】
+【致新一代AI架構師：告別軟體脂肪，從30年前IBM《REXX Agents》看AI Agent的極簡重構】
 ================================================================================
 
 致各位正在夜深人靜時優化Kernel、調校Token吞吐量、對抗AI算力與電力牆的工程師與極客們：
@@ -116,96 +116,3 @@ The more I listen to Lou Gerstner, the more I am convinced that his vision of an
 Sincerely,
 Timothy C. Metcalf
 VM Product & System Manager
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-================================================================================
-【附件二】IBM 研究中心經典白皮書《REXX Agents》全文結構與技術精髓還原
-================================================================================
-
-原著文獻：IBM Research Technical Report / White Paper (1990s)
-論文題目：《REXX Agents: Lightweight Autonomous Agents for Distributed Systems》
-研發機構：IBM T.J. Watson Research Center & Endicott Development Laboratory
-
---------------------------------------------------------------------------------
-1. Abstract（摘要）
---------------------------------------------------------------------------------
-This paper introduces the concept of REXX Agents—a lightweight, highly portable, and dynamic software agent architecture built upon the Restructured Extended Executor (REXX) language. As distributed computing expands, traditional static software execution is being replaced by autonomous units of execution that move across systems. We demonstrate why REXX’s interpreted nature, seamless system routing (`ADDRESS`), and string-parsing efficiency (`PARSE`) make it the premier execution engine for mobile and autonomous software agents.
-
---------------------------------------------------------------------------------
-2. Why REXX is the Ultimate Agent Language（為什麼REXX是Agent的唯一解答？）
---------------------------------------------------------------------------------
-Existing procedural and compiled languages fail as mobile agent candidates due to binary incompatibility and heavy runtime footprints. REXX provides three unique architectural primitives that make it uniquely suited for Autonomous Agents:
-
-2.1 The `ADDRESS` Environment: Dynamic Tool Routing
-Unlike traditional languages that rely on static API links, REXX uses the `ADDRESS` keyword to dynamically dispatch commands to external environments (e.g., system shells, database engines, or hardware drivers). 
-* An Agent written in REXX can dynamically alter its execution context simply by issuing:
-  `ADDRESS UNIX 'ls -l'` or `ADDRESS CMS 'STATE FILE A'`.
-* This decouples the Agent’s decision logic from the host’s underlying implementation, allowing universal tool calling.
-
-2.2 The `PARSE` Instruction: Zero-Overhead Token Stream Parsing
-Agents communicate and manipulate data using text/token streams. REXX's built-in `PARSE` instruction provides string pattern matching without the need for complex object deserialization or memory allocation. Token streams and instruction payloads are parsed natively at microsecond speeds.
-
-2.3 State Serialization & Mobility
-Because a REXX program’s variable pool is entirely text-addressable, a running REXX Agent can serialize its complete state—including current execution line, variable bindings, and memory stack—into a compact text string. This allows the Agent to:
-(1) Freeze execution on Host A.
-(2) Transmit its payload (a few kilobytes of text) over the network.
-(3) Resume execution instantly on Host B within a REXX interpreter.
-
---------------------------------------------------------------------------------
-3. Application Scenarios of REXX Agents（REXX Agent 的四大核心應用場景）
---------------------------------------------------------------------------------
-1. Autonomous Network Management（自主網路與系統管理）：
-   Agents 在分散式主機間穿梭，自主診斷系統健康狀態、檢查日誌並執行自癒腳本。
-
-2. Cross-System Workflow Coordination（跨系統工作流協調）：
-   單一REXX Agent可在VM/CMS上發起任務，將結果傳遞至工作站，並觸發大型主機交易——充當萬能的系統黏著劑。
-
-3. Information Filtering & Mining（資訊過濾與主動採集）：
-   Agent 移動至遠端資料庫節點，在當地完成資料過濾與提煉，僅將最終摘要返回給使用者，大幅節省網路頻寬。
-
-4. Micro-Control for Heterogeneous Devices（異質終端極輕量控制）：
-   以僅幾十 KB 的 Runtime 資源，在微控制器與邊緣設備上實現高併發、低功耗的自主控制。
-
---------------------------------------------------------------------------------
-4. 現代AI架構 vs. REXX Agent哲學（工程性能比較表）
---------------------------------------------------------------------------------
-A. 運行環境體積（Runtime Size）
-        **現代主流 Agent（如 LangChain）：幾百MB ~幾GB（需要安裝龐大的Python環
-境與各種套件依賴）。
-        **REXX Agent架構哲學：數百KB ~幾MB（極致微型的控制引擎）。
-            **突破效益：體積直接縮減99%，能直接嵌入汽車晶片、機器人與微控制器（MCU）。B. 記憶體開銷（RAM Footprint）
-        **現代主流Agent：500 MB以上（跑一個Agent就吃掉大量記憶體）。
-        **REXX Agent架構哲學： 10 MB以下（甚至只需要幾十KB）。
-        **突破效益：記憶體開銷降低98%，單一台普通電腦就能同時運行數萬個自治Agent。
-C. 工具調用開銷（Tool Calling）
-        **現代主流Agent：秒級延遲（耗費大量的時間在JSON反序列化與重型HTTP封裝
-上）。
-        **REXX Agent 架構哲學：毫秒甚至微秒級延遲（透過ADDRESS指令將純文字直接
-路由到作業系統與底層API）。
-        **突破效益：響應速度提升百倍，工具調用不再卡頓。
-D. Token解析開銷（Parsing Overhead）
-        **現代主流Agent：高開銷（複雜的物件轉換，且頻繁觸發Python的記憶體回收GC
-停頓）。
-        **REXX Agent架構哲學：零GC開銷（利用內建的PARSE指令在微秒級完成模式匹
-配與Token提取）。
-        **突破效益：Token解析速度提升10 ~ 50 倍，徹底去除軟體中間層的負擔。
-E. 硬體與電力需求（Energy & Hardware）
-        **現代主流Agent：強烈依賴高功耗的GPU / CPU與龐大電力，離不開資料中心。
-        **REXX Agent架構哲學：幾瓦特的微型晶片即可順暢運行。
-        **突破效益：打破AI算力牆與電力牆，實現真正低功耗、普及的端側 AI。
-
