@@ -20,7 +20,7 @@
 當前的「瘦身」多集中於LLM模型層（如FlashAttention、MLA、模型量化），但AI Agent的系統控制層
 與工具呼叫（Tool Calling），依然被臃腫的現代軟體工程所拖累。
 
-這正是我想向新一代工程師們重新推薦REXX（Restructured Extended Executor）及其背後架構哲學的原因。隨信附上我1993年致IBM的原始信件，以及1990年代IBM研究中心發表的劃時代白皮書《REXX Agents》技術精髓。
+這正是我想向新一代工程師們重新推薦REXX（Restructured Extended Executor）及其背後架構哲學的原因。隨信附上我1993年致IBM的原始信件。
 
 --------------------------------------------------------------------------------
 一、 為什麼30年前的REXX哲學是破解現代AI Agent瓶頸的終極密碼？
