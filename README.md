@@ -59,6 +59,10 @@ REXX誕生於資源極度約束的黃金時代，其核心哲學完全直擊現�
 
 歷史總是給予最先回歸本質的人以重賞。當年IBM未能完成的極簡革命，正等待著今天最有眼光與執行力的年輕工程師來實現。
 
+But, I do not claim that REXX itself is the future of AI Agents.
+I believe the architectural principles behind REXX—minimal runtimes, text-stream execution, direct command routing, and lightweight orchestration—deserve to be revisited.
+If somewhere in the world a young engineer reads these ideas, combines them with modern LLMs, and builds something far better than today's agent frameworks, then this repository has fulfilled its purpose.
+
 一位關注軟體本質的三十年老兵
 
 
